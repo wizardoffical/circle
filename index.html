@@ -76,7 +76,7 @@
 
     // Функция для обновления круга
     function updateMarketCap(marketCap) {
-      const newSize = Math.max(800, marketCap * 2); // Минимальный размер круга (100px)
+      const newSize = Math.max(100, marketCap * 2); // Минимальный размер круга (100px)
       circle.style.width = `${newSize}px`;
       circle.style.height = `${newSize}px`;
       circle.textContent = `${marketCap}k`; // Отображаем капитализацию
