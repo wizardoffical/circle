@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketCap Circle</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(120deg, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    header, footer {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    header button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    header button:hover {
+      background-color: #357ab7;
+    }
+    #circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #4a90e2;
+      width: 100px;
+      height: 100px;
+      font-size: 20px;
+      font-weight: bold;
+      transition: all 0.5s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button>X</button>
+    <button>CreatorBid</button>
+  </header>
+
+  <div id="circle">100M</div>
+
+  <footer>
+    Contract: 0x1234567890abcdef1234567890abcdef12345678
+  </footer>
+
+  <script>
+    const circle = document.getElementById('circle');
+
+    // Функция для обновления круга
+    function updateMarketCap(marketCap) {
+      const newSize = Math.max(100, marketCap * 2); // Минимальный размер круга (100px)
+      circle.style.width = `${newSize}px`;
+      circle.style.height = `${newSize}px`;
+      circle.textContent = `${marketCap}M`; // Отображаем капитализацию
+    }
+
+    // Пример: вызов функции вручную
+    updateMarketCap(150); // Замените число на любое значение рыночной капитализации
+  </script>
+</body>
+</html>
